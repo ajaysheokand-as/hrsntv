@@ -25,13 +25,13 @@
           <a href="contact_us.php" class="nav-link"><i class="fas fa-address-book"> Contact Us</i></a>
         </li>
         <li class="nav-item">
-          <a href="index.php" class="nav-link"><i class="fas fa-balance-scale"> Legal</i></a>
+          <a href="accrediation.php" class="nav-link"><i class="fas fa-balance-scale"> Accrediation</i></a>
         </li>
         <li class="nav-item dropdown">
             <a id="dropdownSubMenu1" href="index.php" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"> <i class="fas fa-info-circle"> More </i></a>
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
               <li><a href="#" class="dropdown-item">Terms & Conditions </a></li>
-              <li><a href="#" class="dropdown-item">Media Guide Lines</a></li>
+              <!-- <li><a href="#" class="dropdown-item">Media Guide Lines</a></li> -->
 
               <li class="dropdown-divider"></li>
               <li><a href="#" class="dropdown-item">Admin Login</a></li>
