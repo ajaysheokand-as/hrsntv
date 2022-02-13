@@ -109,7 +109,7 @@
       ajaxRequest("user/login.php", data, (res) => {
         console.log(res);
         if (res.success) {
-          location.href = "./admin/add_news.php" //TODO: change with dashboard
+          location.href = "./admin/dashboard.php"
           // swal("",res.data,"Success");
         } else {
           swal("Error", res.error, "error");

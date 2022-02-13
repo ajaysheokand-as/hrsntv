@@ -34,84 +34,54 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                            <div class="col-12 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <label for="inputName"> Name</label>
-                                    <input type="text" id="inputName" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputName"> Designation</label>
-                                    <input type="text" id="inputName" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputName"> Area</label>
-                                    <input type="text" id="inputName" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputDescription">Address</label>
-                                    <textarea id="inputDescription" class="form-control" rows="2"></textarea>
-                                </div>
-                                <!-- <div class="form-group">
-                                    <label for="inputStatus">Status</label>
-                                    <select id="inputStatus" class="form-control custom-select">
-                                        <option selected="" disabled="">Select one</option>
-                                        <option>On Hold</option>
-                                        <option>Canceled</option>
-                                        <option>Success</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputClientCompany">Client Company</label>
-                                    <input type="text" id="inputClientCompany" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputProjectLeader">Project Leader</label>
-                                    <input type="text" id="inputProjectLeader" class="form-control">
-                                </div> -->
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-6">
-                                <!-- <div class="form-group">
-                                    <label for="inputName">Project Name</label>
-                                    <input type="text" id="inputName" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputDescription">Project Description</label>
-                                    <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-                                </div> -->
-                                <div class="form-group">
-                                    <label for="inputStatus">Gender</label>
-                                    <select id="inputStatus" class="form-control custom-select">
-                                        <option selected="" disabled="">Select</option>
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                        <!-- <option>Canceled</option>
+                            <form id="reporterForm" method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <label for="reporterName"> Name</label>
+                                            <input type="text" id="reporterName" name="reporterName" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reporterDesignation"> Designation</label>
+                                            <input type="text" id="reporterDesignation" name="reporterDesignation" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reporterArea"> Area</label>
+                                            <input type="text" id="reporterArea" name="reporterArea" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reporterAddress">Address</label>
+                                            <textarea id="reporterAddress" name="reporterAddress" class="form-control" rows="2"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <label for="inputGender">Gender</label>
+                                            <select id="inputGender" name="inputSex" class="form-control custom-select">
+                                                <option selected="" disabled="">Select</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <!-- <option>Canceled</option>
                                         <option>Success</option> -->
-                                    </select>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputMobile"> Mobile No.</label>
+                                            <input type="number" id="inputMobile" name="inputMobile" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail"> Email</label>
+                                            <input type="email" id="inputEmail" name="inputEmail" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputImg">Upload Photo</label>
+                                            <input type="file" id="inputImg" accept="image/*" name="inputImg" class="form-control">
+                                        </div>
+
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputName"> Mobile No.</label>
-                                    <input type="number" id="inputName" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputName"> Email</label>
-                                    <input type="email" id="inputName" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputName">Upload Photo</label>
-                                    <input type="choose" id="inputName" class="form-control">
-                                </div>
-                                
-                                <!-- <div class="form-group">
-                                    <label for="inputClientCompany">Client Company</label>
-                                    <input type="text" id="inputClientCompany" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputProjectLeader">Project Leader</label>
-                                    <input type="text" id="inputProjectLeader" class="form-control">
-                                </div> -->
-                            </div>
-                            </div>
+                            </form>
                         </div>
                         <!-- /.card-body -->
                     </div>
@@ -122,7 +92,7 @@
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-12">
                     <a href="#" class="btn btn-secondary">Cancel</a>
-                    <input type="submit" value="Add Reporter" class="btn btn-success float-right">
+                    <input type="submit" value="Add Reporter" id="btnAddReporter" class="btn btn-success float-right">
                 </div>
             </div>
         </section>
@@ -147,6 +117,34 @@
     <script src="../dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard3.js"></script>
+    <script>
+        $(document).ready(function(e) {
+            $("#btnAddReporter").on('click', (function(e) {
+                e.preventDefault();
+                var form = document.querySelector('#reporterForm');
+
+                $.ajax({
+                    url: "../api/employee/add.php",
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    data: new FormData(form),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    beforeSend: function() {
+                        //$("#preview").fadeOut();
+                        // $("#err").fadeOut();
+                    },
+                    success: function(data) {
+
+                    },
+                    error: function(e) {
+                        // $("#err").html(e).fadeIn();
+                    }
+                });
+            }));
+        });
+    </script>
 </body>
 
 </html>

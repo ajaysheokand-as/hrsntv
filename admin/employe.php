@@ -110,14 +110,14 @@
             </section>
             <!-- /.content -->
             <?php
-        include("footer.php");
-        ?>
+            include("footer.php");
+            ?>
         </div>
         <!-- </section> -->
         <!-- /.content-wrapper -->
-        
+
     </div>
-    
+
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
