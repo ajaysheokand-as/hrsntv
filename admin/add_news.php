@@ -35,64 +35,33 @@
                         </div>
                         <div class="card-body">
                             <div class="row">
-                            <div class="col-12 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <label for="inputName"> News Title</label>
-                                    <input type="text" id="inputName" class="form-control">
+                                <div class="col-12 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label for="newsTitle"> News Title</label>
+                                        <input type="text" id="newsTitle" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newsDescription">Description</label>
+                                        <textarea id="newsDescription" class="form-control" rows="4"></textarea>
+                                    </div>
+
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputDescription">Description</label>
-                                    <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+                                <div class="col-12 col-sm-6 col-md-6">
+
+                                    <div class="form-group">
+                                        <label for="newsCategory">Category</label>
+                                        <select id="newsCategory" class="form-control custom-select">
+                                            <option selected="" disabled="">Select</option>
+                                            <option>Common</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newsYT">YouTube Link</label>
+                                        <textarea id="newsYT" class="form-control" rows="4"></textarea>
+                                    </div>
+
                                 </div>
-                                <!-- <div class="form-group">
-                                    <label for="inputStatus">Status</label>
-                                    <select id="inputStatus" class="form-control custom-select">
-                                        <option selected="" disabled="">Select one</option>
-                                        <option>On Hold</option>
-                                        <option>Canceled</option>
-                                        <option>Success</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputClientCompany">Client Company</label>
-                                    <input type="text" id="inputClientCompany" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputProjectLeader">Project Leader</label>
-                                    <input type="text" id="inputProjectLeader" class="form-control">
-                                </div> -->
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-6">
-                                <!-- <div class="form-group">
-                                    <label for="inputName">Project Name</label>
-                                    <input type="text" id="inputName" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputDescription">Project Description</label>
-                                    <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-                                </div> -->
-                                <div class="form-group">
-                                    <label for="inputStatus">Category</label>
-                                    <select id="inputStatus" class="form-control custom-select">
-                                        <option selected="" disabled="">Select</option>
-                                        <option>Common</option>
-                                        <!-- <option>Canceled</option>
-                                        <option>Success</option> -->
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputDescription">YouTube Link</label>
-                                    <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-                                </div>
-                                <!-- <div class="form-group">
-                                    <label for="inputClientCompany">Client Company</label>
-                                    <input type="text" id="inputClientCompany" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputProjectLeader">Project Leader</label>
-                                    <input type="text" id="inputProjectLeader" class="form-control">
-                                </div> -->
-                            </div>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -104,7 +73,7 @@
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-12">
                     <a href="#" class="btn btn-secondary">Cancel</a>
-                    <input type="submit" value="Add News" class="btn btn-success float-right">
+                    <input type="submit" id="btnAddNews" value="Add News" class="btn btn-success float-right">
                 </div>
             </div>
         </section>
@@ -129,6 +98,30 @@
     <script src="../dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard3.js"></script>
+    <script src="../scripts/request.js"></script>
+    <script>
+        $("#btnAddNews").on("click", (e) => {
+            e.preventDefault();
+            const title = $("#newsTitle").val() != "" ? $("#newsTitle").val() : null;
+            const description = $("#newsDescription").val() != "" ? $("#newsDescription").val() : null;
+            const category = $("#newsCategory").val() != "" ? $("#newsCategory").val() : null;
+            const yt = $("#newsYT").val() != "" ? $("#newsYT").val() : null;
+            // if (yt == null || title == null)return;
+            data = {
+                title,
+                description,
+                category,
+                yt
+            }
+            ajaxRequest("news/add.php", data, (res) => {
+                if (res.success) {
+                    swal("Post Added", "New Post Successfully added", "success");
+                } else {
+                    swal("error", res.error, 'error');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

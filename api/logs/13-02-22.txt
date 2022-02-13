@@ -3,3 +3,7 @@
 09:57:45  user/login.php,{"mobile":"7404880600","password":"c4ca4238a0b923820dcc509a6f75849b"}
 09:58:19  user/login.php,{"mobile":"7404880600","password":"c4ca4238a0b923820dcc509a6f75849b"}
 10:01:45  user/login.php,{"mobile":"7404880600","password":"c4ca4238a0b923820dcc509a6f75849b"}
+11:09:09  news/add.php,{"title":"sdfg","description":"xdgbs","category":"Common","yt":"sgsdf"}
+11:09:43  news/add.php,{"title":"sdfg","description":"xdgbs","category":"Common","yt":"sgsdf"}
+11:10:30  news/add.php,{"title":"sdfg","description":"xdgbs","category":"Common","yt":"sgsdf"}
+11:10:55  news/add.php,{"title":"sdfg","description":"xdgbs","category":"Common","yt":"sgsdf"}

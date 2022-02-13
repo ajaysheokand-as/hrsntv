@@ -1,4 +1,5 @@
 <html lang="en">
+<?php require_once('../config/conn.php'); ?>
 
 <head>
     <meta charset="utf-8">
@@ -65,21 +66,26 @@
                                                         <tr role="row">
                                                             <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">SNo.</th>
                                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Title</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description</th>
+                                                            <!-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description</th> -->
                                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="display: none;">Category</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">Youtube Link</th>
+                                                            <!-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">Youtube Link</th> -->
                                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php for ($i = 1; $i <= 77; $i++) { ?>
+                                                        <?php
+                                                        $sql = "SELECT * FROM contents where status =1";
+                                                        $res = mysqli_query($conn, $sql);
+                                                        $i = 1;
+                                                        if (mysqli_num_rows($res) > 0)
+                                                            while ($row = mysqli_fetch_assoc($res)) { ?>
                                                             <tr class="odd">
-                                                                <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                                                                <td>Firefox 1.0</td>
-                                                                <td>Win 98+ / OSX.2+</td>
-                                                                <td style="display: none;">1.7</td>
-                                                                <td style="display: none;">A</td>
-                                                                <td style="display: none;">A</td>
+                                                                <td class="dtr-control sorting_1" tabindex="0"><?php echo $i++; ?></td>
+                                                                <td><?php echo $row['content_title']; ?></td>
+
+                                                                <td><?php echo $row['category']; ?></td>
+
+                                                                <td>A</td>
                                                             </tr>
                                                         <?php } ?>
                                                     </tbody>
