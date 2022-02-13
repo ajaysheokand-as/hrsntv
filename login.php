@@ -20,7 +20,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-      <img src="img/logo.png" height="70px" width="70px"> </br>
+        <img src="img/logo.png" height="70px" width="70px"> </br>
         <a href="#" class="h1"><b>HRSNTV</b></a>
       </div>
       <div class="card-body">
@@ -91,7 +91,33 @@
   <script src="dist/js/adminlte.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="scripts/request.js"></script>
+  <script src="scripts/md5.js"></script>
+  <script>
+    $("#btnLogin").on("click", (e) => {
+      e.preventDefault();
 
+      const mobile = $('#mobile').val() != "" ? $('#mobile').val() : null;
+      const password = $('#password').val() != "" ? $('#password').val() : null;
+      if (mobile == null && password == null) {
+        swal("Warning", "Field Value Missing", "warning");
+        return;
+      }
+      const data = {
+        mobile,
+        password: $.md5(password)
+      };
+      ajaxRequest("user/login.php", data, (res) => {
+        console.log(res);
+        if (res.success) {
+          location.href = "./admin/add_news.php" //TODO: change with dashboard
+          // swal("",res.data,"Success");
+        } else {
+          swal("Error", res.error, "error");
+        }
+      });
+
+    });
+  </script>
 
 </body>
 
