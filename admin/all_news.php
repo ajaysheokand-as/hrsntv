@@ -25,7 +25,7 @@
         <?php
         include("header.php");
         ?>
-        <div class="content-wrapper" style="min-height: 2080.26px;">
+        <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container">
@@ -115,13 +115,15 @@
                 <!-- /.container-fluid -->
             </section>
             <!-- /.content -->
-        </div>
-        </section>
-        <!-- /.content-wrapper -->
-        <?php
+            <?php
         include("footer.php");
         ?>
+        </div>
+        <!-- </section> -->
+        <!-- /.content-wrapper -->
+        
     </div>
+    
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->

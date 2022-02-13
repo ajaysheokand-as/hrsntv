@@ -16,10 +16,10 @@
       <!-- Left navbar links -->
       <ul class="navbar-nav">
       <li class="nav-item">
-          <a href="index.php" class="nav-link"><i class="fas fa-home"> Home</i></a>
+          <a href="dashboard.php" class="nav-link"><i class="fas fa-home"> Home</i></a>
         </li>
         <li class="nav-item">
-          <a href="../team.php" class="nav-link"><i class="fas fa-users"> Team</i></a>
+          <a href="employe.php" class="nav-link"><i class="fas fa-users"> Team</i></a>
         </li>
         <li class="nav-item">
           <a href="add_news.php" class="nav-link"><i class="fas fa-plus-square"> Add News</i></a>
