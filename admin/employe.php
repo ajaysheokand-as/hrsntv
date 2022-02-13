@@ -24,7 +24,7 @@
         <?php
         include("header.php");
         ?>
-        <div class="content-wrapper" style="min-height: 2080.26px;">
+        <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container">
@@ -57,28 +57,30 @@
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                                      
+
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <table id="example1" class="table table-bordered table-striped dataTable dtr-inline collapsed" role="grid" aria-describedby="example1_info">
                                                     <thead>
                                                         <tr role="row">
-                                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Rendering engine</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Browser</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Platform(s)</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="display: none;">Engine version</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">CSS grade</th>
+                                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">SNo.</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Title</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="display: none;">Category</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">Youtube Link</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php for($i=1; $i<=77;$i++) { ?>
-                                                        <tr class="odd">
-                                                            <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                                                            <td>Firefox 1.0</td>
-                                                            <td>Win 98+ / OSX.2+</td>
-                                                            <td style="display: none;">1.7</td>
-                                                            <td style="display: none;">A</td>
-                                                        </tr>
+                                                        <?php for ($i = 1; $i <= 77; $i++) { ?>
+                                                            <tr class="odd">
+                                                                <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
+                                                                <td>Firefox 1.0</td>
+                                                                <td>Win 98+ / OSX.2+</td>
+                                                                <td style="display: none;">1.7</td>
+                                                                <td style="display: none;">A</td>
+                                                                <td style="display: none;">A</td>
+                                                            </tr>
                                                         <?php } ?>
                                                     </tbody>
                                                     <!-- <tfoot>
@@ -93,7 +95,7 @@
                                                 </table>
                                             </div>
                                         </div>
-                                       
+
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -107,13 +109,15 @@
                 <!-- /.container-fluid -->
             </section>
             <!-- /.content -->
-        </div>
-        </section>
-        <!-- /.content-wrapper -->
-        <?php
+            <?php
         include("footer.php");
         ?>
+        </div>
+        <!-- </section> -->
+        <!-- /.content-wrapper -->
+        
     </div>
+    
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
