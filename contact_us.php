@@ -45,14 +45,15 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-body row mb-2">
-          <div class="col-sm-6 text-center d-flex align-items-center justify-content-center">
+          <div class="col-12 col-sm-6 col-md-6 text-center d-flex align-items-center justify-content-center">
             <div class="">
+                <img src="img/logo.png" height="150px" width="150px">
               <h2>Haryana Social<strong>News TV</strong></h2>
               <p>hrsntv.com</p>
               <p class="lead mb-5">123 Testing Ave, Testtown, 9876 NA<br>
                 Phone: +1 234 56789012
               </p>
-              <div class="text-center">
+              <div class="text-center" style="margin-bottom: 10px;">
               <a href="#" class="btn btn-sm bg-teal">
                 <i class="fas fa-comments"></i> Email
               </a>
@@ -62,12 +63,11 @@
             </div>
             </div>
           </div>
-          <div class="col-sm-6">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27753.818665713818!2d76.10097903873331!3d29.597077017186095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3911f29168ef86cf%3A0x4c5ad298bb70a1c3!2sNarwana%2C%20Haryana%20126116!5e0!3m2!1sen!2sin!4v1644722292199!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <div class="col-12 col-sm-6 col-md-6">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27753.818665713818!2d76.10097903873331!3d29.597077017186095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3911f29168ef86cf%3A0x4c5ad298bb70a1c3!2sNarwana%2C%20Haryana%20126116!5e0!3m2!1sen!2sin!4v1644722292199!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
       </div>
-
     </section>
     <!-- /.content -->
   </div>
