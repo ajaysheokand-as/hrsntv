@@ -1,4 +1,5 @@
 <html lang="en">
+<?php require_once('config/conn.php'); ?>
 
 <head>
     <meta charset="utf-8">
@@ -7,12 +8,15 @@
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- IonIcons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="dist/css/style.css">
 </head>
 
 <body class="layout-top-nav control-sidebar-slide-open" style="height: auto;">
@@ -46,46 +50,19 @@
             <!-- Default box -->
             <div class="card card-solid">
                 <div class="card-body pb-0">
-                    <div class="row">
-                        <?php for ($i = 1; $i <= 9; $i++) { ?>
-                            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column text-center align-items-center justify-content-center">
-                                <div class="card bg-light d-flex flex-fill">
-                                    <div class="card-header text-muted border-bottom-0">
-                                        Category
-                                    </div>
-                                    <div class="card-body pt-0">
-                                        <div row>
-                                            <div class="col-12">
-                                                <iframe width="320" height="200" src="https://www.youtube.com/embed/G8tKRPMkvgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                            </div>
-                                        </div>
-                                        <div class="row" style="margin-top: 10px;">
-                                            <div class="col-12">
-                                                <h2 class="lead"><b>Title</b></h2>
-                                                <p class="text-muted text-sm"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quaerat voluptatibus atque a odit ex nemo nostrum pariatur tenetur. Inventore temporibus fugiat officia totam voluptate hic, aliquam fugit libero tempora?
-                                                </p>
-                                            </div>
+                    <div id="newSection" class="row">
+                        <?php
+                        $sql = "SELECT * FROM `contents`";
+                        $res = mysqli_query($conn, $sql);
+                        while ($row = mysqli_fetch_assoc($res)) { ?>
 
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="text-right">
-                                            <a href="#" class="btn btn-sm bg-teal">
-                                                <i class="fas fa-more"></i> Read More
-                                            </a>
-                                            <a href="#" class="btn btn-sm bg-teal">
-                                                <i class="fas fa-share"></i> Share
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         <?php } ?>
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">
-                    <nav aria-label="Contacts Page Navigation">
+                <div class="card-footer text-center">
+                    <button class="btn btn-default center" id="btnSeeMore">See More</button>
+                    <!-- <nav aria-label="Contacts Page Navigation">
                         <ul class="pagination justify-content-center m-0">
                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -96,7 +73,7 @@
                             <li class="page-item"><a class="page-link" href="#">7</a></li>
                             <li class="page-item"><a class="page-link" href="#">8</a></li>
                         </ul>
-                    </nav>
+                    </nav> -->
                 </div>
                 <!-- /.card-footer -->
             </div>
@@ -126,6 +103,63 @@
     <script src="dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="dist/js/pages/dashboard3.js"></script>
+    <script src="scripts/request.js"></script>
+
+    <script>
+        var off = 9;
+        loadNews(0);
+        $("#btnSeeMore").on("click", () => {
+            loadNews(off);
+
+        });
+
+        function loadNews(from) {
+            const data = {
+                from
+            }
+            ajaxRequest("news/fetch.php", data, (res) => {
+                if (res.success) {
+                    off = from + 9;
+                    res.data.map((d) => {
+
+                        $("#newSection").append(newsComponent(d.yt, d.title, d.description));
+                    });
+                } else {
+
+                }
+            }, false);
+        }
+
+        function newsComponent(yt, title, description) {
+            return `<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column text-center align-items-center justify-content-center">
+                                <div class="card bg-light d-flex flex-fill">
+                                    <div class="card-header text-muted border-bottom-0">
+                                        Category
+                                    </div>
+
+                                    <div class="card-body pt-0">
+                                        <div row>
+                                            <div class="col-12">
+                                                <iframe width="320" height="200" src="https://www.youtube.com/embed/${yt}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top: 10px;">
+                                            <div class="col-12">
+                                                <h2 class="lead"><b>${title}</b></h2>
+                                                <p class="text-muted text-sm"> 
+                                                    ${description}
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                       ${sharerUI("http://hrsocialnewstv.com/",title)}
+                                    </div>
+                                </div>
+                            </div>`;
+        }
+    </script>
 </body>
 
 </html>
