@@ -136,9 +136,13 @@
                         // $("#err").fadeOut();
                     },
                     success: function(data) {
-
+                        if (data.success)
+                            swal("Reporter Joined", "successfully new reporter added", "success");
+                        else
+                            swal("Reporter Joined", "error occurred " + data.error, "error");
                     },
                     error: function(e) {
+                        swal("Reporter Joined", "some error occurred ", "error");
                         // $("#err").html(e).fadeIn();
                     }
                 });

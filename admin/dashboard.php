@@ -45,7 +45,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Post</span>
-                <span class="info-box-number">1,410</span>
+                <span class="info-box-number" id="postCount"></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -58,7 +58,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Reporter</span>
-                <span class="info-box-number">410</span>
+                <span class="info-box-number" id="reporterCount"></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -98,7 +98,7 @@
         <div class="row">
 
           <div class="col-md-3 col-sm-6 col-12">
-            <a href="#">
+            <a href="add_news.php">
               <div class="info-box bg-info">
                 <span class="info-box-icon"><i class="fas fa-plus"></i></span>
 
@@ -114,7 +114,7 @@
           </a>
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
-            <a href="#">
+            <a href="all_news.php">
               <div class="info-box bg-success">
                 <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
@@ -142,7 +142,7 @@
 
                 <div class="info-box-content">
                   <!-- <span class="info-box-text">Likes</span> -->
-                 <span class="info-box-number">Add Reporter</span>
+                  <span class="info-box-number">Add Reporter</span>
 
                   <!-- <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
@@ -203,6 +203,15 @@
   <script src="../dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="../dist/js/pages/dashboard3.js"></script>
+  <script src="../scripts/request.js"></script>
+  <script>
+    ajaxRequest("counter.php", {}, (res) => {
+      if (res.success) {
+        $('#reporterCount').html(res.data.content);
+        $('#postCount').html(res.data.employee);
+      }
+    }, true)
+  </script>
 </body>
 
 </html>

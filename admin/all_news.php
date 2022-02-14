@@ -85,19 +85,11 @@
 
                                                                 <td><?php echo $row['category']; ?></td>
 
-                                                                <td>A</td>
+                                                                <td onclick="deleteNewsConfirm(<?php echo $row['content_id']; ?>);">Delete</td>
                                                             </tr>
                                                         <?php } ?>
                                                     </tbody>
-                                                    <!-- <tfoot>
-                                                        <tr>
-                                                            <th rowspan="1" colspan="1">Rendering engine</th>
-                                                            <th rowspan="1" colspan="1">Browser</th>
-                                                            <th rowspan="1" colspan="1">Platform(s)</th>
-                                                            <th rowspan="1" colspan="1" style="display: none;">Engine version</th>
-                                                            <th rowspan="1" colspan="1" style="display: none;">CSS grade</th>
-                                                        </tr>
-                                                    </tfoot> -->
+
                                                 </table>
                                             </div>
                                         </div>
@@ -116,14 +108,14 @@
             </section>
             <!-- /.content -->
             <?php
-        include("footer.php");
-        ?>
+            include("footer.php");
+            ?>
         </div>
         <!-- </section> -->
         <!-- /.content-wrapper -->
-        
+
     </div>
-    
+
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
@@ -154,6 +146,36 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard3.js"></script>
 
+    <script src="../scripts/request.js"></script>
+    <script>
+        function deleteNewsConfirm(newsId) {
+            const id = newsId;
+            swal({
+                title: "Warning",
+                text: "Are you sure you want to delete",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((res) => {
+                console.log(res);
+                if (res) deleteNews(id);
+            });
+        }
+
+        function deleteNews(newsId) {
+            ajaxRequest('news/remove.php', {
+                newsId
+            }, (res) => {
+                if (res.success) {
+                    swal('Deleted', 'Successfully deleted', "success").then(() => {
+                        location.reload();
+                    })
+                } else {
+                    swal('Error', 'error occurred ' + res.error, "error")
+                }
+            }, true);
+        }
+    </script>
     <script>
         $(function() {
             $("#example1").DataTable({
