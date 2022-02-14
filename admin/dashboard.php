@@ -136,13 +136,13 @@
           </div>
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
-            <a href="#">
+            <a href="./add_reporter.php">
               <div class="info-box bg-danger">
                 <span class="info-box-icon"><i class="fas fa-plus"></i></span>
 
                 <div class="info-box-content">
                   <!-- <span class="info-box-text">Likes</span> -->
-                  <a href="./add_reporter.php" style="text-decoration: none;"><span class="info-box-number">Add Reporter</span></a>
+                 <span class="info-box-number">Add Reporter</span>
 
                   <!-- <div class="progress">
                   <div class="progress-bar" style="width: 70%"></div>
