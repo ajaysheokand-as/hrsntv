@@ -38,3 +38,7 @@
 13:10:41  news/fetch.php,{"from":9}
 13:15:27  reporter/add.php,
 13:16:24  reporter/add.php,
+14:11:10  news/remove.php,{"newsId":1}
+14:11:58  news/remove.php,{"newsId":2}
+14:16:06  news/remove.php,{"newsId":2}
+14:16:17  news/remove.php,{"newsId":5}
