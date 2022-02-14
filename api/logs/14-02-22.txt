@@ -42,3 +42,5 @@
 14:11:58  news/remove.php,{"newsId":2}
 14:16:06  news/remove.php,{"newsId":2}
 14:16:17  news/remove.php,{"newsId":5}
+14:36:01  news/fetch.php,{}
+14:36:44  news/fetch.php,{}
