@@ -85,7 +85,7 @@
 
                                                                 <td><?php echo $row['category']; ?></td>
 
-                                                                <td onclick="deleteNewsConfirm(<?php echo $row['content_id']; ?>);">Delete</td>
+                                                                <td onclick="deleteNewsConfirm(<?php echo $row['content_id']; ?>);"><span class="btn btn-danger btn-sm">Delete</span></td>
                                                             </tr>
                                                         <?php } ?>
                                                     </tbody>

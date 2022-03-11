@@ -50,14 +50,14 @@
                 <img src="img/logo.png" height="150px" width="150px">
               <h2>Haryana Social<strong>News TV</strong></h2>
               <p>hrsntv.com</p>
-              <p class="lead mb-5">123 Testing Ave, Testtown, 9876 NA<br>
-                Phone: +1 234 56789012
+              <p class="lead mb-5">Cheeka Baipas Gali No. 2 Kaithal (HR) INDIA<br>
+                Phone: +91 93500-12253
               </p>
               <div class="text-center" style="margin-bottom: 10px;">
-              <a href="#" class="btn btn-sm bg-teal">
+              <a href="mailto:haryanasocialnewstv@gmail.com" target="_blank" class="btn btn-sm bg-teal">
                 <i class="fas fa-comments"></i> Email
               </a>
-              <a href="#" class="btn btn-sm bg-teal">
+              <a href="https://wa.me/919350012253" target="_blank" class="btn btn-sm bg-teal">
               <i class="fas fa-comments"></i> WhatsApp
               </a>
             </div>

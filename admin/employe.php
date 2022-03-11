@@ -23,6 +23,7 @@
     <div class="wrapper">
         <?php
         include("header.php");
+        require_once('../config/conn.php'); 
         ?>
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -30,12 +31,12 @@
                 <div class="container">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>News</h1>
+                            <h1>All Team Member</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">News</li>
+                                <li class="breadcrumb-item active">Team</li>
                             </ol>
                         </div>
                     </div>
@@ -52,7 +53,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">All News</h3>
+                                    <h3 class="card-title">All Team Member</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -64,22 +65,33 @@
                                                     <thead>
                                                         <tr role="row">
                                                             <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">SNo.</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Title</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="display: none;">Category</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">Youtube Link</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">Action</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Name</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Mob. No.</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" >Email</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Address</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Gender</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Designation</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Action</th>
+                                                            <!-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Gender</th> -->
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php for ($i = 1; $i <= 77; $i++) { ?>
+                                                    <?php
+                                                        $sql = "SELECT * FROM `employee` WHERE 1";
+                                                        $result = mysqli_query($conn, $sql);
+                                                        $i = 1;
+                                                        if (mysqli_num_rows($result) > 0)
+                                                            while ($row = mysqli_fetch_assoc($result)) { ?>
                                                             <tr class="odd">
-                                                                <td class="dtr-control sorting_1" tabindex="0">Gecko</td>
-                                                                <td>Firefox 1.0</td>
-                                                                <td>Win 98+ / OSX.2+</td>
-                                                                <td style="display: none;">1.7</td>
-                                                                <td style="display: none;">A</td>
-                                                                <td style="display: none;">A</td>
+                                                                <td class="dtr-control sorting_1" tabindex="0"><?php echo $i++; ?></td>
+                                                                <td><?php echo $row['employee_name']; ?></td>
+                                                                <td><?php echo $row['employee_mobile']; ?></td>
+                                                                <td ><?php echo $row['employee_email']; ?></td>
+                                                                <td ><?php echo $row['employee_address']; ?></td>
+                                                                <td ><?php echo $row['employee_sex']; ?></td>
+                                                                <td ><?php echo $row['employee_designation']; ?></td>
+                                                                <td ><span class="btn btn-danger btn-sm" style="margin: 2px;">Delete</span> <span class="btn btn-success btn-sm" style="margin: 2px;">Update</span></td>
+                                                                <!-- <td ><?php echo $row['employee_name']; ?></td> -->
                                                             </tr>
                                                         <?php } ?>
                                                     </tbody>

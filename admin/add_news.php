@@ -113,7 +113,7 @@
                 category,
                 yt
             }
-            ajaxRequest("news/add.php", data, (res) => {
+            ajaxRequest("../api/news/add.php", data, (res) => {
                 if (res.success) {
                     swal("Post Added", "New Post Successfully added", "success");
                 } else {

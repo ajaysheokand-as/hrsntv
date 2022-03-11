@@ -17,32 +17,63 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link rel="stylesheet" href="dist/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body class="layout-top-nav control-sidebar-slide-open" style="height: auto;">
+<body class="layout-top-nav control-sidebar-slide-open" style="height:auto; ">
     <div class="wrapper">
         <?php
         include("header.php");
         ?>
-        <section class="content-header">
-            <div class="container">
-                <div class="row mb-2">
-                    <div class="col-sm-12 text-center align-items-center justify-content-center">
-                        <div class="alert alert-success alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <h5><i class="fas fa-door-open"></i> Welcome To <span style="color: black;">Haryana Social News TV </span></h5>
 
+        <div class="row m-1">
+            <div class="col-12 col-sm-6 col-md-6 text-center d-flex  justify-content-center">
+                <div class="m-3">
+                    <h3>Welcome To</h3>
+                    <img src="img/logo.png" height="150px" width="150px">
+                    <h2>Haryana Social<strong>News TV</strong></h2>
+                    <!-- <p>hrsntv.com</p> -->
+                    <p class="lead mb-5">Cheeka Baipas Gali No. 2 Kaithal (HR) INDIA<br>
+                        Phone: +91 93500-12253
+                    </p>
+                    <div class="text-center" style="margin-bottom: 10px;">
+                        <a href="mailto:haryanasocialnewstv@gmail.com" target="_blank" class="btn btn-sm bg-teal">
+                            <i class="fas fa-comments"></i> Email
+                        </a>
+                        <a href="https://wa.me/919350012253" target="_blank" class="btn btn-sm bg-teal">
+                            <i class="fas fa-comments"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6">
+                <div id="carouselExampleInterval" class="carousel slide m-3" data-bs-ride="carousel" style="height: 80%;">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <img src="img/carosol/hr.jpeg" class="d-block w-100 rounded" alt="..." height="100%">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="img/carosol/pic.jpeg" class="d-block w-100 rounded" alt="..." height="100%">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="img/carosol/ln.jpeg" class="d-block w-100 rounded" alt="..." height="100%">
                         </div>
                     </div>
-                    <!-- <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">News</li>
-            </ol>
-          </div> -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-            </div><!-- /.container-fluid -->
-        </section>
+            </div>
+
+        </div>
+
+        
 
         <!-- Main content -->
         <section class="content">
@@ -60,20 +91,8 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer text-center">
+                <div class="card-footer text-center ">
                     <button class="btn btn-default center" id="btnSeeMore">See More</button>
-                    <!-- <nav aria-label="Contacts Page Navigation">
-                        <ul class="pagination justify-content-center m-0">
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link" href="#">6</a></li>
-                            <li class="page-item"><a class="page-link" href="#">7</a></li>
-                            <li class="page-item"><a class="page-link" href="#">8</a></li>
-                        </ul>
-                    </nav> -->
                 </div>
                 <!-- /.card-footer -->
             </div>
@@ -131,7 +150,7 @@
         }
 
         function newsComponent(yt, title, description) {
-            return `<div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column text-center align-items-center justify-content-center">
+            return `<div class="col-8 col-sm-6 col-md-4 d-flex align-items-stretch flex-column text-center align-items-center justify-content-center">
                                 <div class="card bg-light d-flex flex-fill">
                                     <div class="card-header text-muted border-bottom-0">
                                         Category
@@ -160,6 +179,9 @@
                             </div>`;
         }
     </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
