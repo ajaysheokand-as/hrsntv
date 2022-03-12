@@ -35,7 +35,7 @@
             <!-- <li><a href="#" class="dropdown-item">Media Guide Lines</a></li> -->
 
             <li class="dropdown-divider"></li>
-            <li><a href="#" class="dropdown-item">Admin Login</a></li>
+            <li><a href="admin/login.php" class="dropdown-item">Admin Login</a></li>
           </ul>
         </li>
       </ul>

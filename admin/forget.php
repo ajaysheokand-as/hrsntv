@@ -24,14 +24,30 @@
         <a href="#" class="h1"><b>HRSNTV</b></a>
       </div>
       <div class="card-body">
-        <p class="login-box-msg">Login to <b> Haryana Social News TV</b></p>
+        <p class="login-box-msg">Forget  <b> Password</b></p>
 
         <form action="#" method="post">
+        <div class="input-group mb-3">
+            <input type="text" id="name" class="form-control" placeholder="Name">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
           <div class="input-group mb-3">
             <input type="number" id="mobile" class="form-control" placeholder="Mobile">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-phone"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="mail" id="mail" class="form-control" placeholder="Email">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
               </div>
             </div>
           </div>
@@ -43,31 +59,45 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-8">
-              <div class="icheck-primary">
-                <input type="checkbox" id="remember">
-                <label for="remember">
-                  Remember Me
-                </label>
+          <div class="input-group mb-3">
+            <input type="password" id="again_password" class="form-control" placeholder=" Enter Password Again">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
               </div>
             </div>
+          </div>
+          <div class="row input-group mb-3">
             <!-- /.col -->
-            <div class="col-4">
-              <button type="submit" id="btnLogin" class="btn btn-primary btn-block">Login</button>
+            <div class="col-6">
+              <button type="submit" id="btnOtp" class="btn btn-success btn-block">Send OTP</button>
             </div>
+            <div class="col-6">
+          <input type="number" id="otp" class="form-control" placeholder="Enter OTP">
+          </div>
             <!-- /.col -->
           </div>
+          <div class="row input-group mb-3">
+            <!-- /.col -->
+            <div class="col-12">
+              <button type="submit" id="btnVerify" class="btn btn-primary btn-block">Verify</button>
+            </div>
+            <!-- <div class="col-6">
+          <input type="number" id="otp" class="form-control" placeholder="Enter OTP">
+          </div> -->
+            <!-- /.col -->
+          </div>
+          
         </form>
 
-        <div class="social-auth-links text-center mt-2 mb-3">
+        <!-- <div class="social-auth-links text-center mt-2 mb-3">
           <a href="forgot.php" class="btn btn-block btn-primary">
             I forgot my password
           </a>
-          <!-- <a href="createuser.php" class="btn btn-block btn-danger">
+          <a href="createuser.php" class="btn btn-block btn-danger">
             Register a new membership
-          </a> -->
-        </div>
+          </a>
+        </div> -->
         <!-- /.social-auth-links -->
 
         <!-- <p class="mb-1">
@@ -82,7 +112,6 @@
     <!-- /.card -->
   </div>
   <!-- /.login-box -->
-
   <!-- jQuery -->
   <script src="../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
@@ -93,24 +122,29 @@
   <script src="../scripts/request.js"></script>
   <script src="../scripts/md5.js"></script>
   <script>
-    $("#btnLogin").on("click", (e) => {
+    $("#btnOtp").on("click", (e) => {
       e.preventDefault();
 
+      const name = $('#name').val() != "" ? $('#name').val() : null;
       const mobile = $('#mobile').val() != "" ? $('#mobile').val() : null;
+      const mail = $('#mail').val() != "" ? $('#mail').val() : null;
       const password = $('#password').val() != "" ? $('#password').val() : null;
-      if (mobile == null && password == null) {
+      if (mobile == null && password == null && mail == null && name == null) {
         swal("Warning", "Field Value Missing", "warning");
         return;
       }
       const data = {
+        name,
         mobile,
-        password: $.md5(password)
+        mail,
+        password: $.md5(password), 
+        otp: Math.floor((Math.random() * 1000000) + 100),
       };
-      ajaxRequest("../../api/user/login.php", data, (res) => {
+      ajaxRequest("../../api/mail/mail.php", data, (res) => {
         console.log(res);
         if (res.success) {
-          // location.href = "./admin/dashboard.php"
-          swal("",res.data,"Success");
+          location.href = "./admin/forget.php"
+          // swal("",res.data,"Success");
         } else {
           swal("Error", res.error, "error");
         }
