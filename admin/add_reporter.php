@@ -91,7 +91,7 @@
             </div>
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-12">
-                    <a href="#" class="btn btn-secondary">Cancel</a>
+                    <a href="employe.php" class="btn btn-warning">View All Member</a>
                     <input type="submit" value="Add Reporter" id="btnAddReporter" class="btn btn-success float-right">
                 </div>
             </div>

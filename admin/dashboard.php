@@ -109,9 +109,10 @@
                 </div>
                 <!-- /.info-box-content -->
               </div>
+              </a>
               <!-- /.info-box -->
           </div>
-          </a>
+          
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
             <a href="all_news.php">
@@ -136,6 +137,27 @@
           </div>
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
+            <a href="add_category.php">
+              <div class="info-box bg-info">
+                <span class="info-box-icon"><i class="fas fa-eye"></i></span>
+
+                <div class="info-box-content">
+                  <!-- <span class="info-box-text">Likes</span> -->
+                  <span class="info-box-number">Add Category</span>
+
+                  <!-- <div class="progress">
+                  <div class="progress-bar" style="width: 70%"></div>
+                </div>
+                <span class="progress-description">
+                  70% Increase in 30 Days
+                </span> -->
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+            </a>
+            <!-- /.info-box -->
+          </div>
+          <div class="col-md-3 col-sm-6 col-12">
             <a href="./add_reporter.php">
               <div class="info-box bg-danger">
                 <span class="info-box-icon"><i class="fas fa-plus"></i></span>
@@ -158,7 +180,7 @@
           </div>
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
-            <a href="#">
+            <a href="employe.php">
               <div class="info-box bg-warning">
                 <span class="info-box-icon"><i class="fas fa-users"></i></span>
 
@@ -182,10 +204,11 @@
         </div>
       </div>
     </div>
-    <?php
+    
+  </div>
+  <?php
     include("footer.php");
     ?>
-  </div>
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->

@@ -53,7 +53,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">All News</h3>
+                                    <h3 class="card-title"><a href="add_news.php" class="btn btn-success btn-sm">Add News</a></h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">

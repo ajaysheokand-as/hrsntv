@@ -55,6 +55,7 @@
                                             <option>Common</option>
 
                                         </select>
+                                        
                                     </div>
                                     <div class="form-group">
                                         <label for="newsYT">YouTube Link</label>
@@ -72,15 +73,17 @@
             </div>
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-12">
-                    <a href="#" class="btn btn-secondary">Cancel</a>
+                    <a href="all_news.php" class="btn btn-warning">View All News</a>
+                    <a href="addCategory.php" class="btn btn-success">Add New Category</a>
                     <input type="submit" id="btnAddNews" value="Add News" class="btn btn-success float-right">
                 </div>
             </div>
         </section>
-        <?php
+        
+    </div>
+    <?php
         include("footer.php");
         ?>
-    </div>
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
