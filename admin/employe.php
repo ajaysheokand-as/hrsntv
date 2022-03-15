@@ -90,7 +90,7 @@
                                                                 <td ><?php echo $row['employee_address']; ?></td>
                                                                 <td ><?php echo $row['employee_sex']; ?></td>
                                                                 <td ><?php echo $row['employee_designation']; ?></td>
-                                                                <td ><span class="btn btn-danger btn-sm" style="margin: 2px;">Delete</span> <span class="btn btn-success btn-sm" style="margin: 2px;">Update</span></td>
+                                                                <td ><button onclick="deleteEmp(<?php echo $row['employee_id']; ?>);" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button> </td>
                                                                 <!-- <td ><?php echo $row['employee_name']; ?></td> -->
                                                             </tr>
                                                         <?php } ?>
@@ -159,6 +159,36 @@
     <script src="../dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard3.js"></script>
+
+    <script>
+        function deleteEmp(employee_id) {
+            const id = employee_id;
+            swal({
+                title: "Warning",
+                text: "Are you sure you want to delete",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((res) => {
+                // console.log(res);
+                if (res) deleteEmploye(id);
+            });
+        }
+
+        function deleteEmploye(employee_id) {
+            ajaxRequest('user/remove.php', {
+                employee_id
+            }, (res) => {
+                if (res.success) {
+                    swal('Deleted', 'Successfully deleted', "success").then(() => {
+                        location.reload();
+                    })
+                } else {
+                    swal('Error', 'error occurred ' + res.error, "error")
+                }
+            }, true);
+        }
+    </script>
 
     <script>
         $(function() {
