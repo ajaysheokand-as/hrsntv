@@ -137,7 +137,7 @@
           </div>
           <!-- /.col -->
           <div class="col-md-3 col-sm-6 col-12">
-            <a href="add_category.php">
+            <a href="addCategory.php">
               <div class="info-box bg-info">
                 <span class="info-box-icon"><i class="fas fa-eye"></i></span>
 
@@ -212,6 +212,7 @@
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
+  <script src="../scripts/request.js"></script>
 
   <!-- jQuery -->
   <script src="../plugins/jquery/jquery.min.js"></script>
