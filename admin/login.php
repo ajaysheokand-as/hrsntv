@@ -109,8 +109,8 @@
       ajaxRequest("../../api/user/login.php", data, (res) => {
         console.log(res);
         if (res.success) {
-          // location.href = "./admin/dashboard.php"
-          swal("",res.data,"Success");
+          location.href = './dashboard.php'
+          // swal("",res.data,"Success");
         } else {
           swal("Error", res.error, "error");
         }

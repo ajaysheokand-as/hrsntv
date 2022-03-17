@@ -74,7 +74,7 @@
                       <!-- <a href="#" class="btn btn-sm bg-teal">
                 <i class="fas fa-comments"></i>
               </a> -->
-                      <a href="#" class="btn btn-sm bg-teal">
+                      <a href="http://wa.me/+91<?php echo $row['employee_mobile']; ?>" class="btn btn-sm bg-teal">
                         <i class="fas fa-comments"></i> WhatsApp
                       </a>
                     </div>
@@ -85,7 +85,7 @@
           </div>
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
+        <!-- <div class="card-footer">
           <nav aria-label="Contacts Page Navigation">
             <ul class="pagination justify-content-center m-0">
               <li class="page-item active"><a class="page-link" href="#">1</a></li>
@@ -98,7 +98,7 @@
               <li class="page-item"><a class="page-link" href="#">8</a></li>
             </ul>
           </nav>
-        </div>
+        </div> -->
         <!-- /.card-footer -->
       </div>
       <!-- /.card -->

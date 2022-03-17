@@ -23,7 +23,7 @@
     <div class="wrapper">
         <?php
         include("header.php");
-        require_once('../config/conn.php'); 
+        require_once('../config/conn.php');
         ?>
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -67,16 +67,16 @@
                                                             <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">SNo.</th>
                                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Name</th>
                                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Mob. No.</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" >Email</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Address</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Gender</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Designation</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Action</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Email</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Address</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Gender</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Designation</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Action</th>
                                                             <!-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Gender</th> -->
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <?php
+                                                        <?php
                                                         $sql = "SELECT * FROM `employee` WHERE 1";
                                                         $result = mysqli_query($conn, $sql);
                                                         $i = 1;
@@ -86,11 +86,11 @@
                                                                 <td class="dtr-control sorting_1" tabindex="0"><?php echo $i++; ?></td>
                                                                 <td><?php echo $row['employee_name']; ?></td>
                                                                 <td><?php echo $row['employee_mobile']; ?></td>
-                                                                <td ><?php echo $row['employee_email']; ?></td>
-                                                                <td ><?php echo $row['employee_address']; ?></td>
-                                                                <td ><?php echo $row['employee_sex']; ?></td>
-                                                                <td ><?php echo $row['employee_designation']; ?></td>
-                                                                <td ><button onclick="deleteEmp(<?php echo $row['employee_id']; ?>);" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button> </td>
+                                                                <td><?php echo $row['employee_email']; ?></td>
+                                                                <td><?php echo $row['employee_address']; ?></td>
+                                                                <td><?php echo $row['employee_sex']; ?></td>
+                                                                <td><?php echo $row['employee_designation']; ?></td>
+                                                                <td><button onclick="deleteEmp(<?php echo $row['employee_id']; ?>);" class="btn btn-danger btn-sm" style="margin: 2px;">Delete</button> </td>
                                                                 <!-- <td ><?php echo $row['employee_name']; ?></td> -->
                                                             </tr>
                                                         <?php } ?>
@@ -159,9 +159,11 @@
     <script src="../dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard3.js"></script>
+    <script src="../scripts/request.js"></script>
 
     <script>
         function deleteEmp(employee_id) {
+
             const id = employee_id;
             swal({
                 title: "Warning",

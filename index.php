@@ -9,6 +9,9 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
+    <!-- Video.js -->
+    <!-- <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" /> -->
+
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -82,6 +85,7 @@
             <div class="card card-solid">
                 <div class="card-body pb-0">
                     <div id="newSection" class="row">
+
                         <?php
                         $sql = "SELECT * FROM `contents`";
                         $res = mysqli_query($conn, $sql);
@@ -159,7 +163,8 @@
                                     <div class="card-body pt-0">
                                         <div row>
                                             <div class="col-12">
-                                                <iframe width="320" height="200" src="https://www.youtube.com/embed/${yt}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                 <iframe width="320" height="200" src="https://www.youtube.com/embed/${yt}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                   
                                             </div>
                                         </div>
                                         <div class="row" style="margin-top: 10px;">
@@ -173,7 +178,7 @@
                                         </div>
                                     </div>
                                     <div class="card-footer">
-                                       ${sharerUI("http://hrsocialnewstv.com/",title)}
+                                       ${sharerUI(`https://www.youtube.com/watch?v=${$yt}`,title)}
                                     </div>
                                 </div>
                             </div>`;
@@ -183,5 +188,8 @@
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
+<!-- <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+<script src="./scripts/videoYT.js"></script> -->
 
 </html>
