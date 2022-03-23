@@ -224,7 +224,7 @@
                 } else {
                     swal("error", res.error, 'error');
                 }
-            });
+            },true);
         });
     </script>
 

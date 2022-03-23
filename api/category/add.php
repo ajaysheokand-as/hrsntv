@@ -23,7 +23,7 @@ $platform =  ($_SERVER['REMOTE_ADDR']);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // The request is using the POST method
     header("Content-Type:application/json");
-    $data = $_REQUEST;
+    $data = json_decode(file_get_contents('php://input'), true);
     if (isset($data['name']) ) {
         $name = $data['name'];
 

@@ -53,15 +53,15 @@
             <div class="col-12 col-sm-6 col-md-6">
                 <div id="carouselExampleInterval" class="carousel slide m-3" data-bs-ride="carousel" style="height: 80%;">
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="2000">
-                            <img src="img/carosol/hr.jpeg" class="d-block w-100 rounded" alt="..." height="100%">
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="img/logo2.png" class="d-block w-100 rounded" alt="..." height="100%">
                         </div>
-                        <div class="carousel-item" data-bs-interval="3000">
+                        <!-- <div class="carousel-item" data-bs-interval="10000">
                             <img src="img/carosol/pic.jpeg" class="d-block w-100 rounded" alt="..." height="100%">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
+                        </div> -->
+                        <!-- <div class="carousel-item" data-bs-interval="10000">
                             <img src="img/carosol/ln.jpeg" class="d-block w-100 rounded" alt="..." height="100%">
-                        </div>
+                        </div> -->
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -105,10 +105,12 @@
         </section>
         <!-- /.content -->
 
-        <?php
+       
+    </div>
+
+    <?php
         include("footer.php");
         ?>
-    </div>
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
