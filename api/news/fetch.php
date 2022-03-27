@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // $description = ($data['description']);
         $to = $from + 9;
 
-        $sql = "SELECT content_id as id,content_title as title,category,content_text as `description`,content_date as date,tags,content_author,remarks FROM `contents` WHERE status =1 LIMIT $from,$to";
+        $sql = "SELECT content_id as id,content_title as title,category,content_yt as yt,content_text as `description`,content_date as date,tags,content_author,remarks FROM `contents` WHERE status =1 LIMIT $from,$to";
         if ($res = mysqli_query($con, $sql)) {
             if (mysqli_num_rows($res) > 0) {
                 $data = array();

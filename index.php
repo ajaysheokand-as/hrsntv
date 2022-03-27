@@ -156,7 +156,7 @@
         }
 
         function newsComponent(yt, title, description) {
-            return `<div class="col-8 col-sm-6 col-md-4 d-flex align-items-stretch flex-column text-center align-items-center justify-content-center">
+            return `<div class="col-12 col-sm-12 col-md-4 d-flex align-items-stretch flex-column text-center align-items-center justify-content-center">
                                 <div class="card bg-light d-flex flex-fill">
                                     <div class="card-header text-muted border-bottom-0">
                                         Category
@@ -165,7 +165,7 @@
                                     <div class="card-body pt-0">
                                         <div row>
                                             <div class="col-12">
-                                                 <iframe width="320" height="200" src="https://www.youtube.com/embed/${yt}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                 <iframe class="col-12" src="https://www.youtube.com/embed/${yt}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                    
                                             </div>
                                         </div>
@@ -180,7 +180,7 @@
                                         </div>
                                     </div>
                                     <div class="card-footer">
-                                       ${sharerUI(`https://www.youtube.com/watch?v=${$yt}`,title)}
+                                       ${sharerUI("https://www.youtube.com/watch?v="+yt,title)}
                                     </div>
                                 </div>
                             </div>`;

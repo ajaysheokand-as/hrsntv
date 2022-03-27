@@ -212,7 +212,7 @@
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
-  <script src="../scripts/request.js"></script>
+  
 
   <!-- jQuery -->
   <script src="../plugins/jquery/jquery.min.js"></script>
