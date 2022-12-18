@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HRSNTV</title>
+    <title>Amrit Dhara News</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -31,11 +31,11 @@
         ?>
 
         <div class="row m-1">
-            <div class="col-12 col-sm-6 col-md-6 text-center d-flex  justify-content-center">
+            <div class="col-12 col-sm-6 col-md-6 text-center d-flex  justify-content-center align-content-between">
                 <div class="m-3">
                     <h3>Welcome To</h3>
-                    <img src="img/logo.png" height="150px" width="150px">
-                    <h2>Haryana Social<strong>News TV</strong></h2>
+                    <!-- <img src="img/logo.png" height="150px" width="150px"> -->
+                    <h2 class="m-5 p-3" style="border: 4px solid green; border-radius: 5px">Amrit Dhara <strong>News</strong></h2>
                     <!-- <p>hrsntv.com</p> -->
                     <p class="lead mb-5">Cheeka Baipas Gali No. 2 Kaithal (HR) INDIA<br>
                         Phone: +91 93500-12253
@@ -51,10 +51,10 @@
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-6">
-                <div id="carouselExampleInterval" class="carousel slide m-3" data-bs-ride="carousel" style="height: 80%;">
+                <div id="carouselExampleInterval" class="carousel slide mx-3" data-bs-ride="carousel" style="height: 80%;">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="10000">
-                            <img src="img/logo2.png" class="d-block w-100 rounded" alt="..." height="100%">
+                            <img src="img/amrit-dhara-news.png" class="d-block w-100 rounded" alt="Amrit-dhara-news" height="80%" width="60%">
                         </div>
                         <!-- <div class="carousel-item" data-bs-interval="10000">
                             <img src="img/carosol/pic.jpeg" class="d-block w-100 rounded" alt="..." height="100%">

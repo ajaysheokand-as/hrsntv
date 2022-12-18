@@ -5,8 +5,8 @@
 <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
   <div class="container-fluid">
     <a href="index.php" class="navbar-brand">
-      <img src="img/logo.png" alt="Spicy Rasoi" class="brand-image elevation-3" style="opacity: 1">
-      <span class="brand-text font-weight-light"><b><i class="fas fa">HRSNTV</i></b></span>
+      <!-- <img src="img/logo.png" alt="Spicy Rasoi" class="brand-image elevation-3" style="opacity: 1"> -->
+      <span class="brand-text font-weight-light align-content-center p-2" style="border: 2px solid green; border-radius: 3px"><b><i class="fas fa">Amrit Dhara News</i></b></span>
     </a>
 
     <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
