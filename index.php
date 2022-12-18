@@ -35,7 +35,7 @@
                 <div class="m-3">
                     <h3>Welcome To</h3>
                     <!-- <img src="img/logo.png" height="150px" width="150px"> -->
-                    <h2 class="m-5 p-3" style="border: 4px solid green; border-radius: 5px">Amrit Dhara <strong>News</strong></h2>
+                    <h2 class="m-5 p-3" style="border: 4px solid green; border-radius: 5px"><strong>Amrit Dhara </strong> News</h2>
                     <!-- <p>hrsntv.com</p> -->
                     <p class="lead mb-5">Cheeka Baipas Gali No. 2 Kaithal (HR) INDIA<br>
                         Phone: +91 93500-12253
