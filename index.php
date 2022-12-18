@@ -30,7 +30,7 @@
         include("header.php");
         ?>
 
-        <div class="row m-1">
+        <div class="row mt-5">
             <div class="col-12 col-sm-6 col-md-6 text-center d-flex  justify-content-center align-content-between">
                 <div class="m-3">
                     <h3>Welcome To</h3>
